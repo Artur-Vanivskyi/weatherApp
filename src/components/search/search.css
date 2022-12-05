@@ -1,0 +1,16 @@
+h1 {
+    font-weight: 600;
+    font-size: 65px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color:rgba(77, 181, 255, 0.4);
+}
+
+.inputBox {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}

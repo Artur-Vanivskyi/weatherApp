@@ -1,3 +1,4 @@
+import "./search.css";
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { GEO_API_URL, geoApiOptions } from "../../api";
@@ -13,13 +14,13 @@ const Search = ({ onSearchChange }) => {
       .then((response) => response.json())
       .then((response) => {
         return {
-            options: response.data.map((city) => {
-                return {
-                    value: `${city.latitude} ${city.longitude}`,
-                    label: `${city.name}, ${city.countryCode}`,
-                }
-            })
-        }
+          options: response.data.map((city) => {
+            return {
+              value: `${city.latitude} ${city.longitude}`,
+              label: `${city.name}, ${city.countryCode}`,
+            };
+          }),
+        };
       })
       .catch((err) => console.error(err));
   };
@@ -29,13 +30,16 @@ const Search = ({ onSearchChange }) => {
   };
 
   return (
-    <AsyncPaginate
-      placeholder="Search for city"
-      debounceTimeout={600}
-      value={search}
-      onChange={handleOnChange}
-      loadOptions={loadOptions}
-    />
+    <>
+      <h1>Weather Land</h1>
+      <AsyncPaginate className="inputBox"
+        placeholder="Search for city"
+        debounceTimeout={600}
+        value={search}
+        onChange={handleOnChange}
+        loadOptions={loadOptions}
+      />
+    </>
   );
 };
 
